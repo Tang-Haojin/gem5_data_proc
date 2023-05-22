@@ -298,6 +298,7 @@ xs_core_prefix = "\[PERF \]\[time=\s+\d+\] TOP\.SimTop\.l_soc\.core_with_l2\.cor
 # align
 xs_topdown_targets = {
     'NoStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: NoStall,\s+(\d+)',
+
     'OverrideBubble': fr'{xs_core_prefix}.ctrlBlock\.dispatch: OverrideBubble,\s+(\d+)',
     'FtqUpdateBubble': fr'{xs_core_prefix}.ctrlBlock\.dispatch: FtqUpdateBubble,\s+(\d+)',
     'TAGEMissBubble': fr'{xs_core_prefix}.ctrlBlock\.dispatch: TAGEMissBubble,\s+(\d+)',
@@ -307,14 +308,24 @@ xs_topdown_targets = {
     'MemVioRedirectBubble': fr'{xs_core_prefix}.ctrlBlock\.dispatch: MemVioRedirectBubble,\s+(\d+)',
     'OtherRedirectBubble': fr'{xs_core_prefix}.ctrlBlock\.dispatch: OtherRedirectBubble,\s+(\d+)',
     'FtqFullStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: FtqFullStall,\s+(\d+)',
+
     'ICacheMissBubble': fr'{xs_core_prefix}.ctrlBlock\.dispatch: ICacheMissBubble,\s+(\d+)',
     'ITLBMissBubble': fr'{xs_core_prefix}.ctrlBlock\.dispatch: ITLBMissBubble,\s+(\d+)',
     'BTBMissBubble': fr'{xs_core_prefix}.ctrlBlock\.dispatch: BTBMissBubble,\s+(\d+)',
     'FetchFragBubble': fr'{xs_core_prefix}.ctrlBlock\.dispatch: FetchFragBubble,\s+(\d+)',
+
     'DivStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: DivStall,\s+(\d+)',
     'IntNotReadyStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: IntNotReadyStall,\s+(\d+)',
     'FPNotReadyStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: FPNotReadyStall,\s+(\d+)',
     'MemNotReadyStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: MemNotReadyStall,\s+(\d+)',
+
+    'IntFlStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: IntFlStall,\s+(\d+)',
+    'FpFlStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: FpFlStall,\s+(\d+)',
+
+    'IntDqStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: IntDqStall,\s+(\d+)',
+    'FpDqStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: FpDqStall,\s+(\d+)',
+    'LsDqStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: LsDqStall,\s+(\d+)',
+
     'LoadTLBStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: LoadTLBStall,\s+(\d+)',
     'LoadL1Stall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: LoadL1Stall,\s+(\d+)',
     'LoadL2Stall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: LoadL2Stall,\s+(\d+)',
@@ -322,11 +333,14 @@ xs_topdown_targets = {
     'LoadMemStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: LoadMemStall,\s+(\d+)',
     'StoreStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: StoreStall,\s+(\d+)',
     'AtomicStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: AtomicStall,\s+(\d+)',
+
     'LoadVioReplayStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: LoadVioReplayStall,\s+(\d+)',
     'LoadMSHRReplayStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: LoadMSHRReplayStall,\s+(\d+)',
+
     'ControlRecoveryStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: ControlRecoveryStall,\s+(\d+)',
     'MemVioRecoveryStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: MemVioRecoveryStall,\s+(\d+)',
     'OtherRecoveryStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: OtherRecoveryStall,\s+(\d+)',
+
     'FlushedInsts': fr'{xs_core_prefix}.ctrlBlock\.dispatch: FlushedInsts,\s+(\d+)',
     'OtherCoreStall': fr'{xs_core_prefix}.ctrlBlock\.dispatch: OtherCoreStall,\s+(\d+)',
 }

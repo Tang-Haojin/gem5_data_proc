@@ -10,10 +10,10 @@ import os.path as osp
 
 def draw():
     results = {
-        "GEM5-0429":
-            ("results/gem5-topdown-example-weighted.csv", "GEM5"),
-        "XS-0429": 
-            ("results/xs-topdown-example-weighted.csv", "XS"),
+        # "GEM5-0429":
+        #     ("results/gem5-topdown-weighted.csv", "GEM5"),
+        "XS-0517": 
+            ("results/xs-topdown-weighted.csv", "XS"),
     }
 
     configs = list(results.keys())
@@ -113,6 +113,13 @@ def draw():
 
         'MemNotReadyStall': 'MergeLoad',
 
+        'IntFlStall': 'MergeCore',
+        'FpFlStall': 'MergeCore',
+
+        'IntDqStall': 'MergeCore',
+        'FpDqStall': 'MergeCore',
+        'LsDqStall': 'MergeCore',
+
         'LoadTLBStall': 'MergeLoad',
         'LoadL1Stall': 'MergeLoad',
         'LoadL2Stall': 'MergeLoad',
@@ -201,6 +208,13 @@ def draw():
         'FPNotReadyStall': 'MergeInstNotReady',
 
         'MemNotReadyStall': 'MemNotReady',
+
+        'IntFlStall': 'MergeFreelistStall',
+        'FpFlStall': 'MergeFreelistStall',
+
+        'IntDqStall': 'MergeDispatchQueueStall',
+        'FpDqStall': 'MergeDispatchQueueStall',
+        'LsDqStall': 'MergeDispatchQueueStall',
 
         'LoadTLBStall': 'DTlbStall',
         'LoadL1Stall': 'LoadL1Bound',
