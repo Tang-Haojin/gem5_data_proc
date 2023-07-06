@@ -113,12 +113,12 @@ def draw():
 
         'MemNotReadyStall': 'MergeLoad',
 
-        'IntFlStall': 'MergeCore',
-        'FpFlStall': 'MergeCore',
+        'IntFlStall': 'MergeFreelistStall',
+        'FpFlStall': 'MergeFreelistStall',
 
-        'IntDqStall': 'MergeCore',
-        'FpDqStall': 'MergeCore',
-        'LsDqStall': 'MergeCore',
+        'IntDqStall': 'MergeCoreDQStall',
+        'FpDqStall': 'MergeCoreDQStall',
+        'LsDqStall': 'MergeMemDQStall',
 
         'LoadTLBStall': 'MergeLoad',
         'LoadL1Stall': 'MergeLoad',
