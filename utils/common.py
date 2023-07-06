@@ -386,7 +386,10 @@ def xs_get_stats(stat_file: str, targets: list,
         # for i in tdf.index[:3]:
         #     tdf.at[i, lv] = 0
         tdf[f'{lv}_cum_sum'] = tdf[lv].cumsum()
-        tdf[f'{lv}_cum_pct'] = 100*tdf[f'{lv}_cum_sum']/tdf[lv].sum()
+        if tdf[lv].sum() != 0.0:
+            tdf[f'{lv}_cum_pct'] = 100*tdf[f'{lv}_cum_sum']/tdf[lv].sum()
+        else:
+            tdf[f'{lv}_cum_pct'] = 0.0
         tdf.drop([f'{lv}_cum_sum'], axis=1, inplace=True)
 
     print(tdf)
